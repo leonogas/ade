@@ -63,7 +63,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
         image={image}
       />
       <div className="grid place-items-center">
-        <CarouselDefault images={carroussel} />
+        {carroussel && <CarouselDefault images={carroussel} />}
       </div>
 
       {/**{carroussel && <Slideshow images={carroussel} />}**/}
