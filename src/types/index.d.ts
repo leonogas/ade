@@ -54,6 +54,12 @@ export type Feature = {
   title: string;
 };
 
+export type TopCard = {
+  url: string;
+  desc: string;
+  price: string;
+};
+
 export type Testimonial = {
   name: string;
   designation: string;

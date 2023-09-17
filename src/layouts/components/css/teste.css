@@ -1,0 +1,64 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+/* Hamburger Menu */
+
+.hamburger span {
+  position: relative;
+  display: block;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  width: 1.7em;
+  height: 4px;
+  background-color: black;
+  border-radius: 0.375rem /* 6px */;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger span::before {
+  bottom: 8px;
+}
+
+.hamburger span::after {
+  top: 8px;
+}
+
+/* Hamburger Menu (END) */
+
+#slider-container article {
+  display: grid !important;
+  width: 20rem !important;
+  margin: 2rem auto;
+}
+
+.slick-slider .slick-arrow:before {
+  color: #333;
+  font-size: 2rem;
+}
+
+.slick-slider .slick-dots button:before {
+  font-size: 1.5rem;
+  color: teal;
+}
+
+.slick-slider .slick-dots li.slick-active button::before {
+  color: teal;
+}
+.slick-slider .slick-dots {
+  bottom: -44px;
+}
+
+.slick-slider .slick-dots li {
+  margin: 0 0.5rem;
+}

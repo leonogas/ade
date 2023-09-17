@@ -1,5 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import Pagination from "@/components/Pagination";
+import Slideshow2 from "@/components/Slideshow2";
 import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
@@ -7,7 +8,7 @@ import { sortByDate } from "@/lib/utils/sortFunctions";
 import PageHeader from "@/partials/PageHeader";
 import PostSidebar from "@/partials/PostSidebar";
 import SeoMeta from "@/partials/SeoMeta";
-import { Post } from "@/types";
+import { Button, Feature, Post, TopCard } from "@/types";
 const { blog_folder, pagination } = config.settings;
 
 // for all regular pages
@@ -22,6 +23,25 @@ const Posts = () => {
   const totalPages = Math.ceil(posts.length / pagination);
   const currentPosts = sortedPosts.slice(0, pagination);
 
+  const homepage = getListPage("homepage/_index.md");
+  const { frontmatter } = homepage;
+  const {
+    banner,
+    features,
+    topcards,
+  }: {
+    banner: {
+      title: string;
+      title2: string;
+      title3: string;
+      image: string;
+      content?: string;
+      button?: Button;
+    };
+    features: Feature[];
+    topcards: TopCard[];
+  } = frontmatter;
+
   return (
     <>
       <SeoMeta
@@ -30,8 +50,9 @@ const Posts = () => {
         description={description}
         image={image}
       />
-
       <PageHeader title={postIndex.frontmatter.title} />
+      <div className="mb-10" />
+      {topcards && <Slideshow2 data={topcards} />}
       <section className="section">
         <div className="container">
           <div className="row gx-5">

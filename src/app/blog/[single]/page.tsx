@@ -1,4 +1,3 @@
-
 import BlogCard from "@/components/BlogCard";
 import Disqus from "@/components/Disqus";
 import Share from "@/components/Share";
@@ -12,8 +11,10 @@ import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
 import Link from "next/link";
-import Slideshow from "@/components/Slideshow"
-
+import Slideshow from "@/components/Slideshow";
+import Slideshow2 from "@/components/Slideshow2";
+import { Carousel } from "@material-tailwind/react";
+import CarouselDefault from "./CarouselDefault";
 import {
   FaRegClock,
   FaRegFolder,
@@ -39,7 +40,6 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
   const posts: Post[] = getSinglePage(blog_folder);
   const post = posts.filter((page) => page.slug === params.single)[0];
 
-
   const { frontmatter, content } = post;
   const {
     title,
@@ -50,7 +50,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
     categories,
     date,
     tags,
-    carroussel
+    carroussel,
   } = frontmatter;
   const similarPosts = similerItems(post, posts, post.slug!);
 
@@ -62,14 +62,17 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
         description={description}
         image={image}
       />
-{carroussel &&  (
-<Slideshow images={carroussel} />)}
+      <div className="grid place-items-center">
+        <CarouselDefault images={carroussel} />
+      </div>
+
+      {/**{carroussel && <Slideshow images={carroussel} />}**/}
 
       <section className="section pt-7">
         <div className="container">
           <div className="row justify-center">
             <article className="lg:col-10">
-            {image && (
+              {/**{image && (
                 <div className="mb-10">
                   <ImageFallback
                     src={image}
@@ -79,7 +82,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
                     className="w-full rounded"
                   />
                 </div>
-              )}
+              )}**/}
               <h1
                 dangerouslySetInnerHTML={markdownify(title)}
                 className="h2 mb-4"

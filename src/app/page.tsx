@@ -1,9 +1,10 @@
-import { getListPage } from "@/lib/contentParser";
+import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
-import { Button, Feature } from "@/types";
-import ProductHero from "@/components/ProductHero"
+import { Button, Feature, TopCard } from "@/types";
+import ProductHero from "@/components/ProductHero";
+import Slideshow2 from "@/components/Slideshow2";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
@@ -11,15 +12,27 @@ const Home = () => {
   const { frontmatter } = homepage;
   const {
     banner,
+    features,
+    topcards,
   }: {
-    banner: { title: string;  title2: string, title3: string, image: string; content?: string; button?: Button };
+    banner: {
+      title: string;
+      title2: string;
+      title3: string;
+      image: string;
+      content?: string;
+      button?: Button;
+    };
     features: Feature[];
+    topcards: TopCard[];
   } = frontmatter;
 
   return (
-    <> 
+    <>
       <SeoMeta />
       <ProductHero />
+      <div className="mb-10" />
+      {topcards && <Slideshow2 data={topcards} />}
       {/*<section className="section pt-10">
         <div className="container">
           <div className="row justify-center">
@@ -41,10 +54,7 @@ const Home = () => {
         </div>
         
   </section>*/}
-      
-  
-
-     {/*<Testimonials data={testimonial} /> */} 
+      {/*<Testimonials data={testimonial} /> */}
     </>
   );
 };
