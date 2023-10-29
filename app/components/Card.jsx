@@ -4,7 +4,7 @@ import Link from "next/link";
 function Card(item) {
   console.log(item.item.frontmatter.title);
   return (
-    <div className="max-w-full bg-white dark:bg-gray-800">
+    <div className="max-w-full bg-white dark:bg-gray-100">
       <div className="relative" style={{ minHeight: "300px" }}>
         <Image
           className="rounded-lg p-3 w-full h-full object-cover"
