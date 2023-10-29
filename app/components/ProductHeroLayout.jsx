@@ -21,17 +21,17 @@ function ProductHeroLayout(props) {
         {["\n"].map((str) => (
           <p key={str}>{str}</p>
         ))}
-        <h1 className="text-7xl text-white font-bold pt-10 mt-20">
+        <h1 className="text-5xl text-white font-bold pt-10 mt-20">
           {welcomeText}
         </h1>
 
         {/* Subtitle */}
-        <h2 className="text-5xl text-white font-semibold pt-20">
+        <h2 className="text-2xl text-white font-semibold pt-20">
           {subtitleText}
         </h2>
 
         {/* Slogan */}
-        <p className="text-4xl text-white font-normal mt-10">{sloganText}</p>
+        <p className="text-1xl text-white font-normal mt-10">{sloganText}</p>
 
         {/* Button */}
         <Link href="/blog">
