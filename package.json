@@ -1,0 +1,40 @@
+{
+  "name": "sample-react-fixe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react": "^18.2.29",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "gray-matter": "^4.0.3",
+    "keen-slider": "^6.8.6",
+    "marked": "^2.0.4",
+    "next": "13.5.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-grid-gallery": "^1.0.1-alpha.0",
+    "react-icons": "^4.11.0",
+    "react-markdown": "^9.0.0",
+    "react-multi-carousel": "^2.8.4",
+    "react-responsive-masonry": "^2.1.7",
+    "semantic-ui-react": "^2.1.4",
+    "swiper": "^10.3.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.7",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}
